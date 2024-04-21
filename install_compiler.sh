@@ -305,7 +305,7 @@ INSTALL_FE () {
     fi
 
     # clangfe
-    INSTALL_EXEC_SUB ${AREA}/clang2whirl/mapclang ${PHASEPATH}/mapclang
+    # INSTALL_EXEC_SUB ${AREA}/clang2whirl/mapclang ${PHASEPATH}/mapclang
 
     # GNU 4.2.0 based FE
     INSTALL_EXEC_SUB ${AREA}/wgen/wgen42 ${PHASEPATH}/wgen42
@@ -323,10 +323,10 @@ INSTALL_FE () {
     fi
 
     # install jfe
-    INSTALL_EXEC_SUB ${AREA}/jfe/libb2w/libb2w/libb2w.so ${PHASEPATH}/libjfe/libb2w.so
-    INSTALL_EXEC_SUB ${AREA}/jfe/fernflower/libs/fernflower.jar ${PHASEPATH}/libjfe/fernflower.jar
-    INSTALL_EXEC_SUB ${AREA}/jfe/B2WFrontEnd/libs/b2wfrontend.jar ${PHASEPATH}/libjfe/b2wfrontend.jar
-    INSTALL_EXEC_SUB ${AREA}/jfe/jfe ${PHASEPATH}/jfe
+    # INSTALL_EXEC_SUB ${AREA}/jfe/libb2w/libb2w/libb2w.so ${PHASEPATH}/libjfe/libb2w.so
+    # INSTALL_EXEC_SUB ${AREA}/jfe/fernflower/libs/fernflower.jar ${PHASEPATH}/libjfe/fernflower.jar
+    # INSTALL_EXEC_SUB ${AREA}/jfe/B2WFrontEnd/libs/b2wfrontend.jar ${PHASEPATH}/libjfe/b2wfrontend.jar
+    # INSTALL_EXEC_SUB ${AREA}/jfe/jfe ${PHASEPATH}/jfe
     return 0
 }
 
@@ -424,20 +424,20 @@ INSTALL_PHASE_SPECIFIC_ARCHIVES () {
         fi
         HUGETLB=${TOP_SRCDIR}/osprey/libhugetlbfs
 
-        INSTALL_DATA_SUB ${LIBAREA}/libinstr2/libinstr.a      ${PHASEPATH}/libinstr.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libinstr2/libinstr.a      ${PHASEPATH}/32/libinstr.a
+        # INSTALL_DATA_SUB ${LIBAREA}/libinstr2/libinstr.a      ${PHASEPATH}/libinstr.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libinstr2/libinstr.a      ${PHASEPATH}/32/libinstr.a
 
         INSTALL_DATA_SUB ${LIBAREA}/libopen64rt/libopen64rt.a      ${PHASEPATH}/libopen64rt.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libopen64rt/libopen64rt.a      ${PHASEPATH}/32/libopen64rt.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libopen64rt/libopen64rt.a      ${PHASEPATH}/32/libopen64rt.a
 
         INSTALL_DATA_SUB ${LIBAREA}/libopen64rt/libopen64rt_shared.a      ${PHASEPATH}/libopen64rt_shared.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libopen64rt/libopen64rt_shared.a      ${PHASEPATH}/32/libopen64rt_shared.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libopen64rt/libopen64rt_shared.a      ${PHASEPATH}/32/libopen64rt_shared.a
 
         INSTALL_DATA_SUB ${LIBAREA}/libhugetlbfs/obj64/libhugetlbfs_open64.a     ${PHASEPATH}/libhugetlbfs_open64.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/obj32/libhugetlbfs_open64.a   ${PHASEPATH}/32/libhugetlbfs_open64.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/obj32/libhugetlbfs_open64.a   ${PHASEPATH}/32/libhugetlbfs_open64.a
 
         INSTALL_DATA_SUB ${LIBAREA}/libhugetlbfs/obj64/libhugetlbfs_open64.so    ${PHASEPATH}/libhugetlbfs_open64.so.1
-        INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/obj32/libhugetlbfs_open64.so  ${PHASEPATH}/32/libhugetlbfs_open64.so.1
+        # INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/obj32/libhugetlbfs_open64.so  ${PHASEPATH}/32/libhugetlbfs_open64.so.1
 
         (cd ${PHASEPATH}; ln -sf libhugetlbfs_open64.so.1 libhugetlbfs_open64.so)
         (cd ${PHASEPATH}/32; ln -sf libhugetlbfs_open64.so.1 libhugetlbfs_open64.so)
@@ -452,10 +452,10 @@ INSTALL_PHASE_SPECIFIC_ARCHIVES () {
         INSTALL_DATA_SUB ${HUGETLB}/ldscripts/elf_i386_1G.xBDT      ${PHASEPATH}/32/elf_1G.xBDT
 
         INSTALL_DATA_SUB ${LIBAREA}/libhugetlbfs/elf.xBD    ${PHASEPATH}/64/elf.xBD
-        INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/elf.xBD      ${PHASEPATH}/32/elf.xBD
+        # INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/elf.xBD      ${PHASEPATH}/32/elf.xBD
 
         INSTALL_DATA_SUB ${LIBAREA}/libhugetlbfs/elf_1G.xBD    ${PHASEPATH}/64/elf_1G.xBD
-        INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/elf_1G.xBD      ${PHASEPATH}/32/elf_1G.xBD
+        # INSTALL_DATA_SUB ${LIB32AREA}/libhugetlbfs/elf_1G.xBD      ${PHASEPATH}/32/elf_1G.xBD
 
     fi
 
@@ -509,8 +509,8 @@ INSTALL_GENERAL_PURPOSE_NATIVE_ARCHIVES () {
         INSTALL_DATA_SUB ${LIBAREA}/libmv/libmv.so.1           ${PHASEPATH}/libmv.so.1
         INSTALL_DATA_SUB ${LIBAREA}/libopenmp/libopenmp.a      ${PHASEPATH}/libopenmp.a
         INSTALL_DATA_SUB ${LIBAREA}/libopenmp/libopenmp.so.1      ${PHASEPATH}/libopenmp.so.1
-        INSTALL_DATA_SUB ${LIBAREA}/libacml_mv/libacml_mv.a ${PHASEPATH}/libacml_mv.a
-        INSTALL_DATA_SUB ${LIBAREA}/libacml_mv/libacml_mv.so.1 ${PHASEPATH}/libacml_mv.so.1
+        # INSTALL_DATA_SUB ${LIBAREA}/libacml_mv/libacml_mv.a ${PHASEPATH}/libacml_mv.a
+        # INSTALL_DATA_SUB ${LIBAREA}/libacml_mv/libacml_mv.so.1 ${PHASEPATH}/libacml_mv.so.1
         # 32bit libraries
         [ "$INSTALL_FORTRAN" = "YES" ] && INSTALL_DATA_SUB ${LIB32AREA}/libfortran/libfortran.a ${PHASEPATH}/32/libfortran.a
         [ "$INSTALL_FORTRAN" = "YES" ] && INSTALL_DATA_SUB ${LIB32AREA}/libfortran/libfortran.so ${PHASEPATH}/32/libfortran.so
@@ -520,12 +520,12 @@ INSTALL_GENERAL_PURPOSE_NATIVE_ARCHIVES () {
         [ "$INSTALL_FORTRAN" = "YES" ] && INSTALL_DATA_SUB ${LIB32AREA}/libu/libffio.a          ${PHASEPATH}/32/libffio.a
         [ "$INSTALL_FORTRAN" = "YES" ] && INSTALL_DATA_SUB ${LIB32AREA}/libu/libffio.so          ${PHASEPATH}/32/libffio.so
         #INSTALL_DATA_SUB ${LIB32AREA}/libm/libmsgi.a       ${PHASEPATH}/32/libmsgi.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libmv/libmv.a           ${PHASEPATH}/32/libmv.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libmv/libmv.so.1           ${PHASEPATH}/32/libmv.so.1
-        INSTALL_DATA_SUB ${LIB32AREA}/libopenmp/libopenmp.a      ${PHASEPATH}/32/libopenmp.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libopenmp/libopenmp.so.1      ${PHASEPATH}/32/libopenmp.so.1
-        INSTALL_DATA_SUB ${LIB32AREA}/libacml_mv/libacml_mv.a ${PHASEPATH}/32/libacml_mv.a
-        INSTALL_DATA_SUB ${LIB32AREA}/libacml_mv/libacml_mv.so.1 ${PHASEPATH}/32/libacml_mv.so.1
+        # INSTALL_DATA_SUB ${LIB32AREA}/libmv/libmv.a           ${PHASEPATH}/32/libmv.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libmv/libmv.so.1           ${PHASEPATH}/32/libmv.so.1
+        # INSTALL_DATA_SUB ${LIB32AREA}/libopenmp/libopenmp.a      ${PHASEPATH}/32/libopenmp.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libopenmp/libopenmp.so.1      ${PHASEPATH}/32/libopenmp.so.1
+        # INSTALL_DATA_SUB ${LIB32AREA}/libacml_mv/libacml_mv.a ${PHASEPATH}/32/libacml_mv.a
+        # INSTALL_DATA_SUB ${LIB32AREA}/libacml_mv/libacml_mv.so.1 ${PHASEPATH}/32/libacml_mv.so.1
 
         (cd ${PHASEPATH}; ln -sf libmv.so.1 libmv.so; ln -sf libopenmp.so.1 libopenmp.so)
         (cd ${PHASEPATH}; ln -sf libacml_mv.so.1 libacml_mv.so)
@@ -662,7 +662,7 @@ INSTALL_MAN_PAGE () {
 }
 
 INSTALL_MISC () {
-    INSTALL_EXEC_SUB ${AREA}/vsa/vsa.so           ${PHASEPATH}/vsa.so
+    # INSTALL_EXEC_SUB ${AREA}/vsa/vsa.so           ${PHASEPATH}/vsa.so
     INSTALL_EXEC_SUB ${AREA}/wopt/wopt.so         ${PHASEPATH}/wopt.so
     INSTALL_EXEC_SUB ${AREA}/lw_inline/lw_inline  ${PHASEPATH}/inline
     INSTALL_EXEC_SUB ${AREA}/lno/lno.so           ${PHASEPATH}/lno.so
